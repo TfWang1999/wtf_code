@@ -1,3 +1,20 @@
+%% Main Virtual Clinical Trial Analysis and Metric Validation
+% Script Purpose: 
+% This script processes results from Virtual Clinical Trials (VCT) to evaluate 
+% the predictive power of three immunity metrics: msImmunity (multiscale), 
+% tsImmunity (tissue-scale), and molsImmunity (molecular-scale).
+%
+% Workflow:
+% 1. Load therapy regimens and population-level simulation data for four cohorts.
+% 2. Iteratively process 1,000 virtual patients (VPs) per cohort to calculate 
+%    clinical response ($Percentage change$) and immunity scores.
+% 3. Visualize the correlation between immunity metrics and tumor regression.
+% 4. Perform ROC curve analysis to calculate AUC, quantifying the accuracy 
+%    of metrics in predicting treatment responders.
+%
+% Data Dependencies: 
+% Requires.mat files in 'VCT_Results' subfolders and therapy matrix files.
+
  clear
  Score ={};
         Therapy_martix = {};
@@ -356,4 +373,5 @@ grid off;
 end
 
 set(gcf, 'Units', 'centimeters', 'Position', [1, 1, 40, 26]);
+
 
